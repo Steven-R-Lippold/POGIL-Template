@@ -1,0 +1,108 @@
+%\documentclass{amsproc}
+%\documentclass[reqno,11pt]{amsart}
+%\documentclass[10pt]{amsart}
+\documentclass[twoside, 12pt,a4paper]{article}
+\usepackage{epsfig,amscd,amssymb,amsmath,amsfonts,csquotes,comment}
+\usepackage{tcolorbox,fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\newcommand{\Class}{CLASS TITLE}
+\newcommand{\Lesson}{LESSON TITLE}
+
+
+% Length to control the \fancyheadoffset and the calculation of \headline
+% simultaneously
+\newlength\FHoffset
+\setlength\FHoffset{1cm}
+
+\addtolength\headwidth{2\FHoffset}
+
+\fancyheadoffset{\FHoffset}
+
+% these lengths will control the headrule trimming to the left and right 
+\newlength\FHleft
+\newlength\FHright
+
+% here the trimmings are controlled by the user
+\setlength\FHleft{1cm}
+\setlength\FHright{0cm}
+
+% The new definition of headrule that will take into acount the trimming(s)
+\newbox\FHline
+\setbox\FHline=\hbox{\hsize=\paperwidth%
+  \hspace*{\FHleft}%
+  \rule{\dimexpr\headwidth-\FHleft-\FHright\relax}{\headrulewidth}\hspace*{\FHright}%
+}
+\renewcommand\headrule{\vskip-.7\baselineskip\copy\FHline}
+\fancyhead[CE,CO]{\Lesson}
+\fancyfoot[RE,LO]{Page \thepage}
+
+\renewcommand{\abstractname}{Main Idea}
+
+\usepackage{amsmath,titlesec}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{amsthm,color,cancel}
+\renewcommand{\arraystretch}{1.5}
+
+% Customizing the \section command
+\titleformat{\section}
+  {\normalfont\Large\bfseries} % Format for the section title
+  {Activity \#\thesection:}       % Prefix before the section number
+  {1em}                        % Space between the prefix and the title
+  {}                           % Code preceding the title
+
+% Customizing the \subsection command
+\titleformat{\subsection}
+  {\normalfont\bfseries} % Format for the section title
+  {Model \thesection:}       % Prefix before the section number
+  {1em}                        % Space between the prefix and the title
+  {}                           % Code preceding the title
+
+\usepackage[margin=1.05in]{geometry}
+\usepackage[colorlinks]{hyperref}
+\usepackage{siunitx}
+
+\title{Topic: \Lesson}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy} % so we get everything on page 1
+
+\begin{center}
+
+    \begin{tabular}{|>{\centering\arraybackslash}p{7cm}|>{\centering\arraybackslash}p{7cm}|}
+       \hline
+       \Large \textbf{Role}&\Large \textbf{Team Member}\\
+       \hline 
+       \textit{Manager}: assigns the roles \& makes sure everyone contributes appropriately.  & \\
+       \hline 
+       \textit{Presenter}: talks to the instructor and other teams. &\\
+       \hline
+       \textit{Recorder}: records all answers \& questions, and provides team reflection to team \& instructor. &\\
+       \hline
+       \textit{Reader}: keeps everyone on track \& reads the questions. &\\
+       \hline
+    \end{tabular}
+\end{center}
+
+\section*{\textbf{Learning Objectives:}}
+\begin{enumerate}
+    \item 
+\end{enumerate}
+\newpage
+\section{Model Title}
+\begin{tcolorbox}[colback=black!10, colframe=yellow, title=]
+\subsection{}
+This is the text inside the shaded box. You can add more text here to fit your needs.
+\[f(x)=\begin{cases}
+    x\\
+    x^2
+\end{cases}\]
+\end{tcolorbox}
+
+
+\end{document}
